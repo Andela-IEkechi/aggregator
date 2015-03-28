@@ -37,3 +37,7 @@ nav {
     padding-bottom: 0.5em;
     border-bottom: solid 2px deepskyblue;
 }
+footer {
+    position: relative;on: fixed;
+    bottom: 0;
+}
