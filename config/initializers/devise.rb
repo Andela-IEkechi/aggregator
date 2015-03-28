@@ -4,7 +4,6 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '8c91dfe311baa2b720d69998b67e2d899204ff36f7564df98b58d047cec5295b422b137906fc8a6740c218ee651e92e875935276b0d90529a8a72787116c1d9c'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -23,7 +22,8 @@ Devise.setup do |config|
   require 'openid/store/filesystem'
   require 'omniauth-slack'
   config.omniauth :slack, "2853699384.4208943950",
-                  "854ceed7ed89b555a9313f029bf32a62", { access_type: "offline", approval_prompt: "Select Account" }
+                  "854ceed7ed89b555a9313f029bf32a62"
+  config.secret_key = '46a2ab10c5fb63c94c03de18bf825786b89b9f8bcb73822983ade492ef6fe81c5411fb15aa220a4737144583839a6902e3e652a09967408ce951af067ca02599'
 
 
   # ==> Configuration for any authentication mechanism

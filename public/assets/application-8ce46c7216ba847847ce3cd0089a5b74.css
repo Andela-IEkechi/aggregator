@@ -5,6 +5,7 @@
  */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -4983,4 +4984,70 @@ button.close {
   .hidden-print {
     display: none!important
   }
+}
+/* line 4, /Users/MonsieurSlim/workspace/aggregator/app/assets/stylesheets/dashboard.scss */
+body {
+  color: #ffffff;
+}
+/* line 5, /Users/MonsieurSlim/workspace/aggregator/app/assets/stylesheets/home.scss */
+#land {
+  margin: 10%;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* line 10, /Users/MonsieurSlim/workspace/aggregator/app/assets/stylesheets/home.scss */
+h1#land {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+/* line 14, /Users/MonsieurSlim/workspace/aggregator/app/assets/stylesheets/home.scss */
+.land2 {
+  color: deepskyblue;
+  font-style: italic;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url("third.jpg");
+}
+nav {
+    padding: 1em;
+}
+.main {
+    color: deepskyblue;
+    font-size: 250%;
+    text-shadow: #000000;
+}
+.main:hover {
+    text-decoration: none;
+}
+.minor {
+    font-size: 150%;
+    padding: 0.5em;
+}
+.minor:hover {
+    text-decoration: none;
+    padding-bottom: 0.5em;
+    border-bottom: solid 2px deepskyblue;
+}
+footer {
+    position: fixed;
+    bottom: 0;
 }
