@@ -221,6 +221,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
+  omniauth-oauth2 (~> 1.2.0)
   omniauth-openid
   omniauth-slack
   pg

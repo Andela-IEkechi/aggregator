@@ -28,6 +28,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'omniauth-slack'
+gem 'omniauth-oauth2', '~> 1.2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
