@@ -20,6 +20,11 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+  require 'openid/store/filesystem'
+  require 'omniauth-slack'
+  config.omniauth :slack, "2853699384.4208943950",
+                  "854ceed7ed89b555a9313f029bf32a62", { access_type: "offline", approval_prompt: "Select Account" }
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
