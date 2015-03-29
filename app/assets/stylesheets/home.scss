@@ -3,15 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #land {
-  margin: 10%;
+  margin: 200px auto 50px;
   color: #ffffff;
+  float: none;
   text-align: center;
-}
-h1#land {
-  font-size: 150%;
-  font-weight: bold;
+  h1 {
+    font-family: "Courgette";
+    font-size: 4.0em;
+  }
+  a {
+    padding: 20px 50px;
+  }
 }
 .land2 {
-  color: deepskyblue;
-  font-style: italic;
+  color: #153047;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: "Shadows Into Light Two";
+  text-shadow: 0 0 20px rgba(255,255,255,.5);
+  margin-bottom: 30px
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
 }

@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   after_action :store_location
 
+  def home
+    if user_signed_in?
+      redirect_to dashboard_path
+    else
+      render 'home/show'
+    end
+  end
+
   # Define route on sign in
   def after_sign_in_path_for(resource)
     # super(resource)

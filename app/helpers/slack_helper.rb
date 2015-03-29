@@ -6,7 +6,6 @@ module SlackHelper
   end
 
   def slack_files
-    puts self.inspect
     HTTParty.get("https://slack.com/api/files.list", set_user_option(current_user))["files"]
   end
 
