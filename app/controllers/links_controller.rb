@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class LinksController < ApplicationController
   include SlackHelper
 
   before_action :authenticate_user!

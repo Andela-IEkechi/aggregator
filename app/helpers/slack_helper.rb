@@ -6,7 +6,6 @@ module SlackHelper
   end
 
   def slack_files
-    puts self.inspect
     HTTParty.get("https://slack.com/api/files.list", set_user_option(current_user))["files"]
   end
 
@@ -19,5 +18,10 @@ module SlackHelper
     current_user.email = slack_user["profile"]["email"]
     current_user.name = slack_user["profile"]["real_name"]
     current_user.image = slack_user["profile"]["image_original"]
+  end
+
+  def slack_links
+    response = HTTParty.get("https://slack.com/api/files.list", set_user_option(current_user))["files"]
+    binding.pry
   end
 end

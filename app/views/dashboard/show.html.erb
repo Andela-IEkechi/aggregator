@@ -1,8 +1,15 @@
-<% provide(:title, "User Dashboard") %>
+<% provide(:title, "Slack Aggregator") %>
 <% provide(:heading, "Dashboard") %>
-<%= current_user.inspect %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      <i class="fa fa-file"></i> File Uploads on your Slack Channels
+    </h1>
+  </div>
+</div>
 <% slack_files.each do |file| %>
   <pre>
     <%= link_to( file["name"], file["url_download"]) + " | Type: #{file["pretty_type"]} | #{number_to_human_size(file["size"], precision: 2)}" %>
+    <%= link_to "View", file["url"], target: '_blank'%>
   </pre>
 <% end %>

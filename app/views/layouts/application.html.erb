@@ -18,12 +18,9 @@
     <% if user_signed_in? %>
         <!--Logged in as <strong><%= current_user.email %></strong>.-->
         <%= link_to 'Dashboard', dashboard_path, class: 'minor' %>
-        <%= link_to 'Edit profile', edit_user_registration_path, class: 'minor' %> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'minor' %>
     <% else %>
         <%= link_to "Sign in with Slack", user_omniauth_authorize_path(:slack), class: "btn btn-default" %>
-        <%= link_to "Sign up", new_user_registration_path, class: 'minor' %> |
-        <%= link_to "Login", new_user_session_path, class: 'minor' %>
     <% end %>
   </p>
 </nav>

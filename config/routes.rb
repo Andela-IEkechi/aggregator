@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#show'
   get '/dashboard', to: 'dashboard#show'
+  get 'links', to: 'links#show'
+
 
   get '/slack/user', to: 'slack#user'
   get '/slack/files', to: 'slack#files'

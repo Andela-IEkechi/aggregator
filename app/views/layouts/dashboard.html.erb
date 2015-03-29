@@ -40,10 +40,13 @@
           <a href="/"><i class="fa fa-fw fa-home"></i>Home</a>
         </li>
         <li>
-          <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+          <a href="<%= dashboard_path %>"><i class="fa fa-fw fa-file"></i>Files</a>
         </li>
         <li>
-          <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+          <a href="<%= links_path %>"><i class="fa fa-fw fa-external-link"></i>Links</a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-fw fa-gear"></i> Settings</a>
         </li>
         <li>
           <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i><%= current_user.name %>'s Details <i class="fa fa-fw fa-caret-down"></i></a>
@@ -58,21 +61,11 @@
             </li>
           </ul>
         </li>
-        <li>
-          <a href="<%= destroy_user_session_path %>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-        </li>
       </ul>
     </div>
   </nav>
   <div id="page-wrapper">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-header">
-            <i class="fa fa-file"></i> File Uploads on your Slack Channels
-          </h1>
-        </div>
-      </div>
       <div class="row">
         <%= yield %>
       </div>
