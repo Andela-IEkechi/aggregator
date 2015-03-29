@@ -6,23 +6,23 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:slack]
 
-  def self.find_for_slack(code, signed_in_resource=nil)
-    data = code.info
-    user = User.where(provider: code.provider, uid: code.uid ).first
+  def self.find_for_slack(access_token, signed_in_resource=nil)
+    data = access_token.info
+    user = User.where(provider: access_token.provider, uid: access_token.uid ).first
     if user
       return user
     else
-      registered_user = User.where(:uid => code.uid).first
+      registered_user = User.where(:uid => access_token.uid).first
       if registered_user
         return registered_user
       else
         user = User.create(nickname: data["user"],
-                           provider:code.provider,
+                           provider:access_token.provider,
                            team: data["team"],
                            team_id: data["team_id"],
-                           uid: code.uid ,
-                           team_url: code.extra.raw_info.url,
-                           token: code.credentials.token,
+                           uid: access_token.uid ,
+                           team_url: access_token.extra.raw_info.url,
+                           token: access_token.credentials.token,
                            password: Devise.friendly_token[0,20]
         )
       end
