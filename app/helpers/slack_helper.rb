@@ -2,7 +2,8 @@ module SlackHelper
 
   def set_user_option(current_user)
     token = current_user.token
-    @options = { query: {token: token, ts_from: DateTime.now.beginning_of_day} }
+    @options = { query: {token: token, ts_from: (DateTime.now - 7.days).beginning_of_day.to_time.to_i},
+                 count: 200, pages: 2 }
   end
 
   def slack_files
