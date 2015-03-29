@@ -6,3 +6,11 @@
     </h1>
   </div>
 </div>
+<% slack_links.each do |link| %>
+  <pre>
+    <pre>
+    <%= link_to( link["text"], link["permalink"]) %>
+      <p>Posted by ; <%= link['username']%>, in <%= link["channel"]["name"]%>, On: <%= DateTime.strptime((link["ts"]),"%s")%> </p>
+  </pre>
+  </pre>
+<% end %>

@@ -2,8 +2,7 @@ module SlackHelper
 
   def set_user_option(current_user)
     token = current_user.token
-    @options = { query: {token: token, ts_from: (DateTime.now - 7.days).beginning_of_day.to_time.to_i},
-                 count: 200, pages: 2 }
+    @options = { query: {token: token, ts_from: (DateTime.now - 7.days).beginning_of_day.to_time.to_i, count: 200}}
   end
 
   def slack_files
@@ -21,8 +20,11 @@ module SlackHelper
     current_user.image = slack_user["profile"]["image_original"]
   end
 
+  def set_options_for_query(current_user)
+    token = current_user.token
+    @content = { query: {token: token, count: 100, query: 'http'}}
+  end
   def slack_links
-    response = HTTParty.get("https://slack.com/api/files.list", set_user_option(current_user))["files"]
-    binding.pry
+    HTTParty.get("https://slack.com/api/search.messages", set_options_for_query(current_user))["messages"]["matches"]
   end
 end
