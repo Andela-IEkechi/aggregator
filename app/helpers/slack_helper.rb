@@ -15,9 +15,12 @@ module SlackHelper
   end
 
   def update_current_user
-    current_user.email = slack_user["profile"]["email"]
-    current_user.name = slack_user["profile"]["real_name"]
-    current_user.image = slack_user["profile"]["image_original"]
+    details = {
+      email: slack_user["profile"]["email"],
+      name: slack_user["profile"]["real_name"],
+      image: slack_user["profile"]["image_original"]
+    }
+    current_user.update_attributes!(details)
   end
 
   def set_options_for_query(current_user)

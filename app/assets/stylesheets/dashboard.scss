@@ -253,3 +253,14 @@ ul.alert-dropdown {
 .prof {
   border-radius: 40%;
 }
+
+
+// Dashboard table
+.table-row {
+  padding: 10px;
+  float: none;
+  margin: 10px auto;
+  thead > tr th{
+    padding: 20px 0;
+  }
+}
