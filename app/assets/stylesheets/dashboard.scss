@@ -45,14 +45,20 @@ html, body {
     padding-left: 225px;
   }
   #page-wrapper {
+    margin-top: 90px;
     padding: 10px;
   }
 }
 
 /* Top Navigation */
 
+nav {
+  padding: 0 !important;
+}
+
 .navbar-header {
   margin-left: 225px;
+  padding: 10px;
 }
 
 .navbar-inverse {
@@ -61,7 +67,7 @@ html, body {
 }
 
 .top-nav {
-  padding: 0 15px;
+  padding: 25px;
   > {
     li {
       display: inline-block;

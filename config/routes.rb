@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   root 'home#show'
   get '/dashboard', to: 'dashboard#show'
-  get 'links', to: 'links#show'
+  get '/links', to: 'links#show'
 
-
-  get '/slack/user', to: 'slack#user'
-  get '/slack/files', to: 'slack#files'
 
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
