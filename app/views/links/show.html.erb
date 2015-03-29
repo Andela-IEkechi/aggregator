@@ -7,10 +7,17 @@
   </div>
 </div>
 <% slack_links.each do |link| %>
-  <pre>
-    <pre>
-    <%= link_to( link["text"], link["permalink"]) %>
-      <p>Posted by ; <%= link['username']%>, in <%= link["channel"]["name"]%>, On: <%= DateTime.strptime((link["ts"]),"%s")%> </p>
-  </pre>
-  </pre>
+  <div class="col-md-11 well clearfix">
+    <h3>#<%= link["channel"]["name"] %></h3>
+    <div class="col-md-7">
+      <p><%= link["text"] %><p>
+      <kbd>Posted by - <%= link['username']%>, On: <%= DateTime.strptime((link["ts"]),"%s")%> </kbd>
+    </div>
+    <% 
+      urls = link["text"].match(/https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_|\-\.]*(\?\S+)?)?)?/)
+     %>
+    <div class="col-md-2 pull-right">
+      <%= link_to( "Visit link", urls.to_s || "#", class: "btn btn-small btn-success", target:'_blank') %>
+    </div>
+  </div>
 <% end %>

@@ -27,6 +27,7 @@ module SlackHelper
     token = current_user.token
     @content = { query: {token: token, count: 100, query: 'http'}}
   end
+  
   def slack_links
     HTTParty.get("https://slack.com/api/search.messages", set_options_for_query(current_user))["messages"]["matches"]
   end

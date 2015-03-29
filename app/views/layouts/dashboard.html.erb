@@ -39,19 +39,22 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     </div>
-    <ul class="nav navbar-text tip">
+    <ul class="nav navbar-text tip pull-right">
       <li class="dropdown">
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class='fa fa-user'></i><%= current_user.name %><b class="caret"></b></a>
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class='fa fa-user'></i> <%= current_user.name %><b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li>
-            <p>Team : <%= current_user.team %></p>
+            <p>Team: <%= current_user.team %></p>
           </li>
           <li class="divider"></li>
           <li>
-            <p>Email : <%= current_user.email %></p>
+            <p>Email: <%= current_user.email %></p>
           </li>
           <li>
-            <p>Timezone : <%= slack_user["tz"] %></p>
+            <p>Timezone: <%= slack_user["tz"] %></p>
+          </li>
+          <li>
+            <%= link_to "<i class=\"fa fa-fw fa-power-off\"></i> Log Out".html_safe, destroy_user_session_path, method: :delete %>
           </li>
         </ul>
       </li>
@@ -65,13 +68,13 @@
           </span>
         </li>
         <li>
-          <a href="/"><i class="fa fa-fw fa-home"></i>Home</a>
+          <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
         </li>
         <li>
-          <a href="<%= dashboard_path %>"><i class="fa fa-fw fa-file"></i>Files</a>
+          <a href="<%= dashboard_path %>"><i class="fa fa-fw fa-file"></i> Files</a>
         </li>
         <li>
-          <a href="<%= links_path %>"><i class="fa fa-fw fa-external-link"></i>Links</a>
+          <a href="<%= links_path %>"><i class="fa fa-fw fa-external-link"></i> Links</a>
         </li>
         <!--<li>-->
           <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i><%= current_user.name %>'s Details <i class="fa fa-fw fa-caret-down"></i></a>-->

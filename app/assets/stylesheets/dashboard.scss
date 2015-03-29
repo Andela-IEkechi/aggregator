@@ -84,6 +84,7 @@ nav {
       }
     }
     .open > {
+      margin-right:30px;
       a {
         color: #183347;
         background-color: #000;
@@ -263,4 +264,13 @@ ul.alert-dropdown {
   thead > tr th{
     padding: 20px 0;
   }
+}
+
+// Dashboard link
+.well {
+  word-wrap: break-word;
+}
+
+.tip {
+  margin-right: 60px !important;
 }
