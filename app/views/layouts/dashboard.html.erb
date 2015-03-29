@@ -39,9 +39,23 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     </div>
-    <strong class="nav navbar-text pull-right">
-      <i class='fa fa-user'></i>  <%= current_user.name %>
-    </strong>
+    <ul class="nav navbar-text tip">
+      <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class='fa fa-user'></i><%= current_user.name %><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <p>Team : <%= current_user.team %></p>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <p>Email : <%= current_user.email %></p>
+          </li>
+          <li>
+            <p>Timezone : <%= slack_user["tz"] %></p>
+          </li>
+        </ul>
+      </li>
+    </ul>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav side-nav">
         <li>
@@ -59,19 +73,17 @@
         <li>
           <a href="<%= links_path %>"><i class="fa fa-fw fa-external-link"></i>Links</a>
         </li>
-        <li>
-          <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i><%= current_user.name %>'s Details <i class="fa fa-fw fa-caret-down"></i></a>
-          <ul id="demo" class="collapse">
-            <li>
-              <p>Email :
-                <%= current_user.email %></p>
-            </li>
-            <li>
-              <p>Team :
-              <%= current_user.team %></p>
-            </li>
-          </ul>
-        </li>
+        <!--<li>-->
+          <!--<a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i><%= current_user.name %>'s Details <i class="fa fa-fw fa-caret-down"></i></a>-->
+          <!--<ul id="demo" class="collapse">-->
+            <!--<li>-->
+              <!--<p>Email :-->
+            <!--</li>-->
+            <!--<li>-->
+              <!--<p>Team :-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</li>-->
       </ul>
     </div>
   </nav>
