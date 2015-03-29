@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
                            team: data["team"],
                            team_id: data["team_id"],
                            uid: code.uid ,
-                           team_url: code.extra.raw_info.user_id,
+                           team_url: code.extra.raw_info.url,
                            token: code.credentials.token,
                            password: Devise.friendly_token[0,20]
         )
