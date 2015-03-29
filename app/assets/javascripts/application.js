@@ -15,3 +15,6 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+$(function () {
+  $(".youtube").YouTubeModal({autoplay:0, width:640, height:480});
+});
