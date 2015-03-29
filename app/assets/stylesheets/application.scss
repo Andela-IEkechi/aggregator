@@ -12,32 +12,41 @@
  *
  *= require_tree .
  *= require_self
+ *= require_bootstrap
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
-    font-family: 'Lato', sans-serif;
-    background-image: url("third.jpg");
+  font-family: 'Lato', sans-serif;
+  background-image: url("third.jpg");
 }
+
 nav {
-    padding: 1em;
+  padding: 1em;
 }
+
 .main {
-    color: deepskyblue;
-    font-size: 250%;
-    text-shadow: #000000;
-}
-.main:hover {
+  color: deepskyblue;
+  font-size: 250%;
+  text-shadow: #000000;
+  &:hover {
     text-decoration: none;
+  }
 }
+
 .minor {
-    font-size: 150%;
-    padding: 0.5em;
-}
-.minor:hover {
+  font-size: 150%;
+  padding: 0.5em;
+  &:hover {
     text-decoration: none;
     padding-bottom: 0.5em;
     border-bottom: solid 2px deepskyblue;
+  }
 }
+
 footer {
-    position: fixed;
-    bottom: 0;
+  position: fixed;
+  bottom: 0;
 }

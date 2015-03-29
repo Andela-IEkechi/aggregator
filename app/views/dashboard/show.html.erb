@@ -1,2 +1,8 @@
-<h1>Dashboard#show</h1>
-<p>Find me in app/views/dashboard/show.html.erb</p>
+<% provide(:title, "User Dashboard") %>
+<% provide(:heading, "Dashboard") %>
+<%= current_user.inspect %>
+<% slack_files.each do |file| %>
+  <pre>
+    <%= link_to( file["name"], file["url_download"]) + " | Type: #{file["pretty_type"]} | #{number_to_human_size(file["size"], precision: 2)}" %>
+  </pre>
+<% end %>
