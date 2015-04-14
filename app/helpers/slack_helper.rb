@@ -31,4 +31,24 @@ module SlackHelper
   def slack_links
     HTTParty.get("https://slack.com/api/search.messages", set_options_for_query(current_user))["messages"]["matches"]
   end
+
+  def get_user_token(current_user)
+    token = current_user.token
+    @activity = { query: {token: token, username: "MakeItBetter", channel: "#random", text: "Testing" }}
+  end
+
+  def suggestion_box
+    HTTParty.post("https://slack.com/api/chat.postMessage", get_user_token(current_user))
+  end
+
+  def create_channel
+    token = current_user.token
+    @new_channel = { query: { token: token, name: "suggestion-box" }}
+    response = HTTParty.get("https://slack.com/api/channels.list", set_user_option(current_user))
+    if response["channels"].find { |obj| obj["name"] == "suggestion-box" && obj["is_archived"] == false} == nil
+      HTTParty.post("https://slack.com/api/channels.create", @new_channel)
+    else
+      @channel = (response["channels"].find { |obj| obj["name"] == "suggestion-box" && obj["is_archived"] == false})
+    end
+  end
 end
