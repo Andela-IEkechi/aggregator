@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   root 'home#show'
   get '/dashboard', to: 'dashboard#show'
   get '/links', to: 'links#show'
+  get '/suggestion_box', to: 'suggestion_box#show'
 
 
   devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks" }

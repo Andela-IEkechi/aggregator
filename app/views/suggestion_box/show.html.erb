@@ -1,0 +1,16 @@
+<% provide(:title, "Slack Aggregator - Suggestion Box") %>
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">
+      <i class="fa fa-team"></i> #Suggestion-Box
+    </h1>
+  </div>
+</div>
+<% get_history.each do |message| %>
+    <div class="col-md-11 well clearfix">
+      <div class="col-md-7">
+        <p><%= message["text"] %><p>
+        <kbd>Posted by - <%= message['username']%>, On: <%= DateTime.strptime((message["ts"]),"%s")%> </kbd>
+      </div>
+    </div>
+<% end %>
