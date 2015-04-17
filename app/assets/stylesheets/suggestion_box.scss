@@ -1,3 +1,56 @@
 // Place all the styles related to the suggestion_box controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+.bubble {
+//  box-sizing: border-box;
+  width: auto;
+  max-width: 70%;
+  position: relative;
+//  clear: both;
+
+  background: lightgreen;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 0.5px 0.5px grey;
+  -moz-box-shadow: 0.5px 0.5px grey;
+  box-shadow: 0.5px 0.5px grey;
+  margin-bottom: 5em;
+  padding: 6px 10px;
+  color: #000;
+}
+.bubble:before, .bubble:after {
+  border-radius: 20px / 5px;
+  content: '';
+  display: block;
+  position: absolute;
+}
+.bubble:before {
+  border: 10px solid transparent;
+  border-bottom-color: lightgreen;
+  bottom: 0px;
+  left: -7px;
+  z-index: -2;
+}
+.bubble:after {
+  border: 8px solid transparent;
+  border-bottom-color: lightgreen; /* arrow color */
+  bottom: 1px;
+  left: -5px;
+}
+.chat-message {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  padding-top: 0.3em;
+}
+.chat-avatar {
+  margin-right: -14em;
+  position: relative;
+  img {
+    border: double 2px lightgreen;
+    border-radius: 50%;
+  }
+}

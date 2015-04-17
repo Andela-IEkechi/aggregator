@@ -7,10 +7,16 @@
   </div>
 </div>
 <% get_history.each do |message| %>
-    <div class="col-md-11 well clearfix">
-      <div class="col-md-7">
-        <p><%= message["text"] %><p>
-        <kbd>Posted by - <%= message['username']%>, On: <%= DateTime.strptime((message["ts"]),"%s")%> </kbd>
-      </div>
+    <div class="row">
+        <div class="col-md-3 chat-avatar">
+          <%= image_tag current_user.image, class: "col-md-5", size: "64" %>
+        </div>
+        <div class="col-md-9 bubble clearfix">
+          <div>
+            <strong><%= message['username']%></strong>
+            <p class="chat-message"><%= message["text"] %><p>
+            <p class="pull-right"><%= DateTime.strptime((message["ts"]),"%s")%></p>
+          </div>
+        </div>
     </div>
 <% end %>
