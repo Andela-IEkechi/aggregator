@@ -16,7 +16,7 @@ module SlackHelper
 
   def update_current_user
     details = {
-      email: slack_user["profile"]["email"],
+      # email: slack_user["profile"]["email"],
       name: slack_user["profile"]["real_name"],
       image: slack_user["profile"]["image_original"]
     }
